@@ -1,0 +1,159 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    direction: rtl; 
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+#productForm {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-header input {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-header button {
+    background-color: #0b2650;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-header button:hover {
+    background-color: #0b2650;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    direction: rtl; 
+}
+
+th, td {
+    padding: 12px;
+    text-align: right;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #0b2650;
+    color: white;
+}
+
+td input[type="text"], td input[type="number"], td input[type="date"] {
+    width: 100%;
+    margin: 3px 0;
+    padding: 7px 2px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+td input[type="number"] {
+    text-align: right;
+}
+
+td .total {
+    font-weight: bold;
+    text-align: right;
+}
+
+.summary {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.summary span {
+    font-weight: bold;
+}
+
+.summary p {
+    margin: 8px 0;
+}
+
+button.save {
+    background-color: #0b2650;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+button.save:hover {
+    background-color: #0b2650;
+}
+
+.add-row-button {
+    background-color: #0b2650;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.add-row-button:hover {
+    background-color: #0b2650;
+}
+.print-button {
+    background-color: #0b2650; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.view-invoices-button {
+    background-color: #0b2650;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+    width: 100%;
+}
+

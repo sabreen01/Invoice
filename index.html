@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>حساب الفاتورة</h1>
+
+<form id="productForm">
+    <div class="form-header">
+        <div>
+            <label for="customerName">اسم العميل:</label>
+            <input type="text" id="customerName" placeholder="أدخل اسم العميل">
+        </div>
+        <div>
+            <label for="invoiceDate">تاريخ الفاتورة:</label>
+            <input type="date" id="invoiceDate">
+        </div>
+    </div>
+
+    <button type="button" onclick="addRow()" class="add-row-button">اضافة صنف</button>
+
+    <table id="productTable">
+        <tr>
+            <th>المنتج</th>
+            <th>السعر</th>
+            <th>الكمية</th>
+            <th>المجموع</th>
+        </tr>
+        <tr>
+            <td><input type="text" value="صنف 1"></td>
+            <td><input type="number" value="10" class="price"></td>
+            <td><input type="number" value="1" class="quantity" onchange="calculateTotal(this)"></td>
+            <td class="total">10.00</td>
+        </tr>
+    </table>
+    
+    <div class="summary">
+        <p>المجموع الإجمالي: <span id="total">10.00</span></p>
+        <p>الضرائب (15%): <span id="taxes">1.50</span></p>
+        <p>المجموع النهائي: <span id="finalTotal">11.50</span></p>
+    </div>
+    
+    <button type="button" onclick="save()" class="save">حفظ الفاتورة</button>
+    <button type="button" onclick="printInvoice()" class="print-button">طباعة الفاتورة</button>
+    <button type="button" onclick="window.location.href='invoices.html'" class="view-invoices-button">عرض الفواتير المحفوظة</button>
+
+</form>
+
+
+<script src="main.js"></script> 
+</body>
+</html>
