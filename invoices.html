@@ -1,27 +1,84 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoices</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <h1>الفواتير المحفوظة</h1>
 
-<table id="invoicesTable">
-    <tr>
-        <th>اسم العميل</th>
-        <th>تاريخ الفاتورة</th>
-        <th>المنتجات</th>
-        <th>المجموع</th>
-        <th>الضرائب</th>
-        <th>المجموع النهائي</th>
-        <th>إجراءات</th>
-    </tr>
+<table id="invoicesTable" class="table">
+    <thead>
+        <tr>
+            <th>اسم العميل</th>
+            <th>تاريخ الفاتورة</th>
+            <th>المنتجات</th>
+            <th>المجموع</th>
+            <th>الضرائب</th>
+            <th>المجموع النهائي</th>
+            <th>إجراءات</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
 </table>
+<div class="modal fade" id="editInvoiceModal" tabindex="-1" aria-labelledby="editInvoiceModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editInvoiceModalLabel">تعديل الفاتورة</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="editInvoiceForm">
+                    <div class="form-group">
+                        <label for="editCustomerName">اسم العميل</label>
+                        <input type="text" class="form-control" id="editCustomerName">
+                    </div>
+                    <div class="form-group">
+                        <label for="editInvoiceDate">تاريخ الفاتورة</label>
+                        <input type="date" class="form-control" id="editInvoiceDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="editProducts">المنتجات</label>
+                        <textarea class="form-control" id="editProducts" oninput="calculateTotals()"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="editPrices">الأسعار</label>
+                        <textarea class="form-control" id="editPrices" oninput="calculateTotals()"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="editQuantities">الكميات</label>
+                        <textarea class="form-control" id="editQuantities" oninput="calculateTotals()"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="editTotal">المجموع</label>
+                        <input type="number" class="form-control" id="editTotal" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="editTaxes">الضرائب</label>
+                        <input type="number" class="form-control" id="editTaxes" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="editFinalTotal">المجموع النهائي</label>
+                        <input type="number" class="form-control" id="editFinalTotal" readonly>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="saveEditedInvoice()">حفظ التعديلات</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="invoices.js"></script>
 </body>
 </html>

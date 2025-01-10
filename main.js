@@ -151,17 +151,3 @@ function clearInvoice() {
 window.onload = function () {
     clearInvoice();
 };
-
-function loadSavedInvoices() {
-    var allInvoices = JSON.parse(localStorage.getItem('allInvoices')) || [];
-    allInvoices.forEach(invoice => {
-        var newRow = document.getElementById('productTable').insertRow(-1);
-        newRow.innerHTML = `
-            <td><input type="text" value="${invoice.customerName}"></td>
-            <td><input type="number" value="${invoice.invoiceDate}"></td>
-            <td><input type="number" value="${invoice.products}"></td>
-            <td class="total">${invoice.total}</td>
-        `;
-    }
-    );
-}
